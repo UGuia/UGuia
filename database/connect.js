@@ -2,7 +2,7 @@ import mongoose, { connection } from "mongoose";
 import UserModel from "./Models/User";
 
 export default async function Connection() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/uguia");
+  await mongoose.connect(process.env.MONGODB_URL);
 
   // const model = await UserModel.find({});
   // console.log(model);
