@@ -9,8 +9,8 @@ export default function Card({ nombre, horario, descripcion, image }) {
         src={proc}
         alt=""
         className="tienda-image"
-        width={100}
-        height={100}
+        width={"40%"}
+        height={"40%"}
       />
       <div className="tienda-descripcion">
         <h5>{nombre}</h5>

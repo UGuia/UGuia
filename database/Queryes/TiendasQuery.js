@@ -5,6 +5,9 @@ const TiendasQuery = {
   TiendasById: function (id) {
     return TiendasModel.findById(id);
   },
+  TiendasBySlug: function(slug){
+    return TiendasModel.find({"slug":slug})
+  }
 };
 
 export default TiendasQuery;
