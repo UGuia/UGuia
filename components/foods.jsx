@@ -12,7 +12,6 @@ export default function Foods({ comidas }) {
             );
           })}
         </ul>
-        ;
       </article>
     </div>
   );

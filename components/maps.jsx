@@ -1,3 +1,4 @@
+"use client";
 export default function Maps({ url }) {
   return (
     <div className="maps">

@@ -1,17 +1,20 @@
 import Image from "next/image";
+import { Suspense } from "react";
 import proc from "../public/243341.png";
 
 export default function Card({ nombre, horario, descripcion, image }) {
   //import proc from `../public/${image}`;
   return (
     <div className="card">
-      <Image
-        src={proc}
-        alt=""
-        className="tienda-image"
-        width={"40%"}
-        height={"40%"}
-      />
+      <Suspense fallback={<p>Cargando Imagen...</p>}>
+        <Image
+          src={proc}
+          alt=""
+          className="tienda-image"
+          width={400}
+          height={400}
+        />
+      </Suspense>
       <div className="tienda-descripcion">
         <h5>{nombre}</h5>
         {/* horario */}
