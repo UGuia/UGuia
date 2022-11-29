@@ -1,9 +1,17 @@
 import Image from "next/image";
 import { Suspense } from "react";
 import proc from "../public/243341.png";
+import { localizacionUser } from "./maps";
 
-export default function Card({ nombre, horario, descripcion, image }) {
+export default function Card({
+  nombre,
+  horario,
+  descripcion,
+  image,
+  localizacion,
+}) {
   //import proc from `../public/${image}`;
+  // let user = localizacionUser;
   return (
     <div className="card">
       <Suspense fallback={<p>Cargando Imagen...</p>}>
@@ -20,7 +28,7 @@ export default function Card({ nombre, horario, descripcion, image }) {
         {/* horario */}
         <p>{horario}</p>
         {/* distancia */}
-        <p>Distancia: 1km</p>
+        <p id="distancia">Distancia: 1km</p>
         {/* descripcion */}
         <p>{descripcion}</p>
       </div>

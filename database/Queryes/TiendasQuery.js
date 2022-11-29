@@ -2,7 +2,9 @@ import { cache } from "react";
 import TiendasModel from "../Models/Tiendas";
 
 const TiendasQuery = {
-  TiendasAll: TiendasModel.find({}),
+  TiendasAll: async () => {
+    return await TiendasModel.find({});
+  },
   TiendasById: function (id) {
     return TiendasModel.findById(id);
   },

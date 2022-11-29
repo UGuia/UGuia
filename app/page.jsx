@@ -6,7 +6,7 @@ import TiendasQuery from "../database/Queryes/TiendasQuery";
 
 export default async function Home() {
   //obtiene todas la tiendas
-  const tiendas = await TiendasQuery.TiendasAll;
+  const tiendas = await TiendasQuery.TiendasAll();
 
   return (
     <article>
@@ -18,6 +18,7 @@ export default async function Home() {
               horario={val.horario}
               descripcion={val.descripcion}
               image={val.imagen}
+              localizacion={val.localizacion}
             />
           </Link>
         );
