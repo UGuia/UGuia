@@ -21,13 +21,11 @@ export const localizacionUser = () => {
       timeout: 5000, // Esperar solo 5 segundos
     };
     // Solicitar
-    const localizacion = navigator.geolocation.getCurrentPosition(
+    navigator.geolocation.getCurrentPosition(
       onUbicacionConcedida,
       onErrorDeUbicacion,
       opcionesDeSolicitud
     );
-
-    console.log(localizacion);
   }
 };
 

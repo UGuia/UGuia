@@ -6,6 +6,7 @@ const Categorias = new Schema(
   {
     _id: String,
     nombre: String,
+    categorias: { type: Schema.ObjectId, ref: "Categorias" },
   },
   { versionKey: false }
 );
