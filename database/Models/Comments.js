@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const Comments = new Schema(
   {
     _id: String,
-    User: { type: Schema.ObjectId, ref: "user" },
+    User: { type: Schema.ObjectId, ref: "User", autopopulate: true },
     comentario: String,
     fecha: Date,
   },

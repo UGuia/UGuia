@@ -14,11 +14,11 @@ const Tiendas = new Schema(
     slug: String,
     calificacion: Number,
     imagen: String,
-    categorias: { type: Schema.ObjectId, ref: "Categorias" },
+    Categorias: [{ type: Schema.Types.ObjectId, ref: "Categorias" }],
     descripcion: String,
     comidas: [ComidaSchema],
     localizacion: { altitud: Number, longitud: Number },
-    comments: { type: Schema.ObjectId, ref: "Comments" },
+    Comments: [{ type: Schema.Types.ObjectId, ref: "Comments" }],
   },
   { versionKey: false }
 );

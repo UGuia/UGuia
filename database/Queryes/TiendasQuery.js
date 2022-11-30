@@ -1,4 +1,5 @@
 import { cache } from "react";
+import CategoriasModel from "../Models/Categorias";
 import CommentsModel from "../Models/Comments";
 import TiendasModel from "../Models/Tiendas";
 import UserModel from "../Models/User";
@@ -18,23 +19,19 @@ const TiendasQuery = {
     return tienda;
   }),
   TiendasBySlugCacheAndComments: cache(async (slug) => {
-    let tiendaArr= []
-    await TiendasModel.findOne({ slug: slug }, (err, tienda) => {
-      const category = CategoriasModel.populate(tienda,{path:"Categorias"},(err,cat)=>{
-       return cat
+    const tienda = await TiendasModel.find({ slug })
+      .populate({
+        path: "Comments",
+        /**
+         * * pasar como otro objeto para relacionar con tres tablas
+         * * en la key populated y pasar la tabla o modelo
+         */
+        populate: { path: "User", select: "Nombre" },
       })
-      const comments = CommentsModel.populate(tienda, { path: "autor" }, (err, comments) => {
-        UserModel.populate(comments, { path: "user" }, (err, user) => {
-          return user;
-        });
-      });
-
-      category.concat(comments)
-      
-
-    });
-    //return tienda;
+      .populate("Categorias");
+    return tienda;
   }),
+  TiendasAllAndCategory: TiendasModel.find().populate("Categorias"), //obtiene todas la tiendas con las categorias
 };
 
 export default TiendasQuery;

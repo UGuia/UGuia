@@ -1,10 +1,63 @@
 import mongoose from "mongoose";
 import Connection from "../database/connect";
+import CategoriasModel from "../database/Models/Categorias";
+import CommentsModel from "../database/Models/Comments";
 import TiendasModel from "../database/Models/Tiendas";
+import UserModel from "../database/Models/User";
+import TiendasQuery from "../database/Queryes/TiendasQuery";
 export default async function Head() {
   await Connection();
 
   //TiendasModel
+  /* const categorias = CategoriasModel.create({
+    _id: new mongoose.Types.ObjectId(),
+    nombre: "antojitos",
+  });
+
+  const save = TiendasModel.updateOne(
+    { _id: "6385917db0079a1936499ce9" },
+    { Categorias: await categorias },
+    (err, tienda) => {
+      err ? console.error(err) : console.log(tienda);
+    }
+  );
+
+  console.log(save); */
+
+  /* const use = UserModel.create({
+    _id: new mongoose.Types.ObjectId(),
+    Nombre: "efrain",
+    email: "efrain@gmail.com",
+    Password: "123456",
+  });
+
+  const comments = CommentsModel.create({
+    _id: new mongoose.Types.ObjectId(),
+    User: await use,
+    comentario: "hola",
+    fecha: new Date(),
+  });
+
+  const save = TiendasModel.updateOne(
+    { _id: "6385917db0079a1936499ce9" },
+    { Comments: await comments },
+    (err, tienda) => {
+      err ? console.error(err) : console.log(tienda);
+    }
+  );
+
+  console.log(save); */
+  /* const tienda = await TiendasModel.find().populate("Categorias");
+  console.log(tienda);
+  console.log(JSON.stringify(tienda)); */
+
+  const tienda = await TiendasQuery.TiendasBySlugCacheAndComments("tienda-2");
+  console.log(tienda);
+
+  //console.log(TiendasQuery.TiendasBySlugCacheAndComments("tienda-2"));
+  /* const tienda = await CommentsModel.find().populate("User");
+  console.log(tienda);
+  console.log(JSON.stringify(tienda)); */
 
   /* let tiendas = await TiendasModel.create({
     _id: new mongoose.Types.ObjectId(),
