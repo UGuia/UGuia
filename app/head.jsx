@@ -5,6 +5,8 @@ import CommentsModel from "../database/Models/Comments";
 import TiendasModel from "../database/Models/Tiendas";
 import UserModel from "../database/Models/User";
 import TiendasQuery from "../database/Queryes/TiendasQuery";
+import PwaHead from "../components/pwaHead";
+
 export default async function Head() {
   await Connection();
 
@@ -85,6 +87,10 @@ export default async function Head() {
   return (
     <>
       <title>Tiendas</title>
+      {/* <PwaHead></PwaHead> */}
+      <link rel="manifest" href="/manifest.json" />
+      <link rel="apple-touch-icon" href="/logo.ico"></link>
+      <meta name="theme-color" content="#fff" />
     </>
   );
 }

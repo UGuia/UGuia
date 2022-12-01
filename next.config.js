@@ -1,7 +1,26 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: { appDir: true },
-  reactStrictMode: true,
-};
+const withPWA = require("next-pwa")({
+  dest: "public",
+  register: true,
+  skipWaiting: true,
+});
 
-module.exports = nextConfig;
+// const nextConfig = withPWA({
+//   reactStrictMode: true,
+//   experimental: { appDir: true },
+// });
+
+module.exports = withPWA({
+  reactStrictMode: true,
+  experimental: { appDir: true },
+});
+// module.exports = withPWA({
+//   reactStrictMode: true,
+//   experimental: { appDir: true },
+//   pwa: {
+//     dest: "public",
+//     register: true,
+//     skipWaiting: true,
+//     fallbacks: {},
+//   },
+// });
