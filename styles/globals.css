@@ -109,10 +109,15 @@ main article .card .tienda-descripcion p {
   padding: 0;
 } */
 /* login */
+
+main article.form-account {
+  margin-top: 7em;
+}
+
 main article form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 80%;
   height: auto;
 }
@@ -125,6 +130,7 @@ main article div.bienvenida {
 
 main article h1 {
   font-size: 7em;
+  margin: 0.8em 0;
 }
 
 main article form input {
@@ -138,25 +144,102 @@ main article form input {
 
 main article form input[type="submit"] {
   width: 50%;
+  margin: auto;
+  margin-top: 3em;
 }
+/* register */
+main article.form-account-register h1 {
+  text-align: center;
+  font-weight: 500;
+}
+main article.form-account-register {
+  margin-top: 40%;
+}
+main article form div.register-div {
+  display: flex;
+  flex-direction: row;
+}
+
+main article form div.register-div input {
+  width: 90%;
+}
+
+main article form p.alert-email {
+  text-align: center;
+  width: 100%;
+  font-size: 1.2em;
+  font-weight: lighter;
+  margin-top: 20px;
+}
+main article form p.alert-email:last-child {
+  margin-top: 0 !important;
+}
+/* register */
 
 main article .btn-red-account {
   background-color: #bc6868;
   border-radius: 15px;
   height: 120px;
-  margin-top: 50px;
-  font-size: 2em;
-  outline: none;
+  margin-top: 3em;
+  font-size: 3em;
+}
+
+main article div.crear-cuenta {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4em;
 }
 
 main article div.crear-cuenta a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+main article div.crear-cuenta a input {
   border: none;
+  margin-top: 0;
+}
+
+main article div.crear-cuenta p {
+  font-size: 2em;
+  margin-top: 5px;
 }
 
 main article form label {
   margin-top: 40px;
   font-size: 2em;
 }
+
+/* estrellas */
+p.clasificacion {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  font-size: 2em;
+}
+
+p.clasificacion input {
+  position: absolute;
+  top: -100px;
+}
+
+p.clasificacion label {
+  float: right;
+  color: #333;
+}
+
+p.clasificacion label:hover,
+p.clasificacion label:hover ~ label,
+p.clasificacion input:checked ~ label {
+  color: #ffa400;
+}
+/* estrellas */
 
 @media (prefers-color-scheme: dark) {
   html {

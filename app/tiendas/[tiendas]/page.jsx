@@ -1,8 +1,8 @@
 import { Suspense } from "react";
-import Card from "../../components/card";
-import Foods from "../../components/foods";
-import Maps from "../../components/maps";
-import TiendasQuery from "../../database/Queryes/TiendasQuery";
+import Card from "../../../components/card";
+import Foods from "../../../components/foods";
+import Maps from "../../../components/maps";
+import TiendasQuery from "../../../database/Queryes/TiendasQuery";
 import NoFound from "./not-found";
 //import proc from "https://www.google.com.mx/maps/place/Jos%C3%A9+Ma.+Arteaga,+Zona+Centro,+Centro,+91000+Xalapa-Enr%C3%ADquez,+Ver./@19.5311657,-96.9160773,19z/data=!4m5!3m4!1s0x85db320202bd0f25:0x89b249b0eb16ce97!8m2!3d19.5311986!4d-96.9155784";
 

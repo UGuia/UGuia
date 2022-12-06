@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 export default function page() {
   return (
-    <article>
+    <article className="form-account">
       <div className="bienvenida">
         <Image
           src="/logo512.png"
-          width={500}
-          height={500}
+          width={600}
+          height={600}
           alt="logo uguia"
         ></Image>
         <h1>¡Bienvenido!</h1>

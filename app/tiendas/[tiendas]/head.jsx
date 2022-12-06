@@ -1,7 +1,7 @@
-import Connection from "../../database/connect";
-import TiendasModel from "../../database/Models/Tiendas";
-import UserModel from "../../database/Models/User";
-import TiendasQuery from "../../database/Queryes/TiendasQuery";
+import Connection from "../../../database/connect";
+import TiendasModel from "../../../database/Models/Tiendas";
+import UserModel from "../../../database/Models/User";
+import TiendasQuery from "../../../database/Queryes/TiendasQuery";
 import mongoose from "mongoose";
 async function getPost(slug) {
   //conexion ala base de datos

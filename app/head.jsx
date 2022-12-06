@@ -87,10 +87,10 @@ export default async function Head() {
   return (
     <>
       <title>Tiendas</title>
-      {/* <PwaHead></PwaHead> */}
-      <link rel="manifest" href="/manifest.json" />
+      <PwaHead></PwaHead>
+      {/* <link rel="manifest" href="/manifest.json" />
       <link rel="apple-touch-icon" href="/logo.ico"></link>
-      <meta name="theme-color" content="#fff" />
+      <meta name="theme-color" content="#fff" /> */}
     </>
   );
 }

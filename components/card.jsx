@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Suspense } from "react";
 import proc from "../public/243341.png";
 import { localizacionUser } from "./maps";
+import Estrellas from "./estrellas";
+import Link from "next/link";
 
 export default function Card({
   nombre,
@@ -26,6 +28,9 @@ export default function Card({
       <div className="tienda-descripcion">
         <h5>{nombre}</h5>
         {/* horario */}
+        <Link href="/valorar-tienda">
+          <Estrellas></Estrellas>
+        </Link>
         <p>{horario}</p>
         {/* distancia */}
         <p id="distancia">Distancia: 1km</p>
