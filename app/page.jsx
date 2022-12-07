@@ -9,20 +9,22 @@ export default async function Home() {
   const tiendas = await TiendasQuery.TiendasAll();
 
   return (
-    <article>
-      {tiendas.map((val, key) => {
-        return (
-          <Link href={`/tiendas/${val.slug}`} key={key}>
-            <Card
-              nombre={val.nombre}
-              horario={val.horario}
-              descripcion={val.descripcion}
-              image={val.imagen}
-              localizacion={val.localizacion}
-            />
-          </Link>
-        );
-      })}
-    </article>
+    <div>
+      <article>
+        {tiendas.map((val, key) => {
+          return (
+            <Link href={`/tiendas/${val.slug}`} key={key}>
+              <Card
+                nombre={val.nombre}
+                horario={val.horario}
+                descripcion={val.descripcion}
+                image={val.imagen}
+                localizacion={val.localizacion}
+              />
+            </Link>
+          );
+        })}
+      </article>
+    </div>
   );
 }
