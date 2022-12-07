@@ -12,6 +12,7 @@ const Tiendas = new Schema(
     _id: String,
     nombre: String,
     slug: String,
+    horario: String,
     calificacion: Number,
     imagen: String,
     Categorias: [{ type: Schema.Types.ObjectId, ref: "Categorias" }],

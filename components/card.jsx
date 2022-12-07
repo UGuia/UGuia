@@ -1,35 +1,33 @@
-import Image from "next/image";
-import { Suspense } from "react";
-import proc from "../public/243341.png";
-import { localizacionUser } from "./maps";
-import Estrellas from "./estrellas";
+"use client";
+import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
-import TiendasComponent from "./tiendas";
+import Estrellas from "./estrellas";
+export default function Card({ tienda }) {
+  const [tiendas, setTiendas] = useState(null);
 
-export default function Card({
-  nombre,
-  horario,
-  descripcion,
-  image,
-  localizacion,
-}) {
+  useEffect(() => {
+    setTiendas(tienda);
+  }, [tienda]);
+
   //import proc from `../public/${image}`;
   // let user = localizacionUser;
-  const tienda = { nombre, horario, descripcion };
+  //const tienda = { nombre, horario, descripcion };
+  //console.log(tiendas?.nombre);
+
   return (
     <>
-      <div className="card">
-        <Suspense fallback={<p>Cargando Imagen...</p>}>
-          <Image
-            src={proc}
-            alt=""
-            className="tienda-image"
-            width={400}
-            height={400}
-          />
+      <div className="tienda-descripcion">
+        <h5>{tiendas?.nombre}</h5>
+
+        <Suspense fallback={<p>Cargando valoracion...</p>}>
+          {/* <Link href="/tiendas/valorar-tienda"></Link> */}
+          <Estrellas></Estrellas>
         </Suspense>
-        <TiendasComponent tiendas={tienda}></TiendasComponent>
+        <p>{tiendas?.horario}</p>
+        <p id="distancia">Distancia: 1km</p>
+        <p>{tiendas?.descripcion}</p>
       </div>
+      {/* <TiendasComponent tienda={tienda}></TiendasComponent> */}
     </>
   );
 }

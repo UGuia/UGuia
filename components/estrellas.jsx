@@ -2,7 +2,7 @@
 export default function Estrellas() {
   return (
     <div>
-      <p class="clasificacion">
+      <p className="clasificacion">
         <input id="radio1" type="radio" name="estrellas" value="5" />
         <label for="radio1">★</label>
         <input id="radio2" type="radio" name="estrellas" value="4" />
