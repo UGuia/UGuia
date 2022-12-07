@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import FormLogin from "../../components/login/formLogin";
 export default function page() {
   return (
     <article className="form-account">
@@ -12,17 +13,8 @@ export default function page() {
         ></Image>
         <h1>¡Bienvenido!</h1>
       </div>
-      <form className="form">
-        <label htmlFor="email">Correo electrónico:</label>
-        <input type="email" />
-        <label htmlFor="password">Contraseña:</label>
-        <input type="password" />
-        <input
-          className="btn-red-account"
-          type="submit"
-          value="Iniciar sesión"
-        />
-      </form>
+      <FormLogin></FormLogin>
+
       <div className="crear-cuenta">
         <p>¿No tiene una cuenta? Cree una</p>
         <Link href="/register">
