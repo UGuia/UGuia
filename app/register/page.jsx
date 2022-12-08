@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 export default function page() {
   return (
-    <article className="form-account-register">
+    <article className="form-account-register card">
       <div className="bienvenida">
         <h1>Cree una cuenta con nosotros</h1>
       </div>

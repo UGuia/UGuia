@@ -24,6 +24,7 @@ const Tiendas = new Schema(
   { versionKey: false }
 );
 
-const TiendasModel = mongoose.model("Tiendas", Tiendas);
+const TiendasModel =
+  mongoose.models.Tiendas || mongoose.model("Tiendas", Tiendas);
 
 export default TiendasModel;

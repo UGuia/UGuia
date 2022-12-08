@@ -21,34 +21,38 @@ a {
   padding: 0;
 }
 
-main article a {
+main article div a {
   width: 100%;
   height: auto;
 }
 
-main article {
+main .container-tiendas {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  align-items: flex-end;
+}
+
+main article div {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
   margin: auto;
   margin-top: 20px;
+  width: 98%;
 }
 
-main article .card {
+main article div .card {
   background-color: #ffffff;
-  width: 100%;
   display: flex;
   flex-direction: row;
-  margin: 15px;
   border-radius: 15px;
   margin-top: 50px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-main article .maps {
+main article div .maps {
   background-color: #ffffff;
   width: 100%;
   display: flex;
@@ -60,7 +64,7 @@ main article .maps {
   text-align: center;
 }
 
-main article .comidas {
+main article div .comidas {
   background-color: #ffffff;
   width: 100%;
   display: flex;
@@ -72,36 +76,36 @@ main article .comidas {
   text-align: center;
 }
 
-main article .maps h5 {
+main article div .maps h5 {
   padding: 15px;
 }
 
-main article .maps iframe {
+main article div .maps iframe {
   border-radius: 15px;
   padding: 10px;
 }
 
-main article .card:first-child {
+main article div .card:first-child {
   margin-top: 15px;
 }
 
-main article .card .tienda-image {
+main article div .card .tienda-image {
   width: 50%;
   height: auto;
   border-radius: 15px;
 }
-main article .card .tienda-descripcion {
+main article div .card .tienda-descripcion {
   width: 50%;
   height: 100% !important;
   padding: 0 20px;
   display: block;
 }
 
-main article .card .tienda-descripcion h5 {
+main article div .card .tienda-descripcion h5 {
   padding-top: 5px;
 }
 
-main article .card .tienda-descripcion p {
+main article div .card .tienda-descripcion p {
   padding-top: 5px;
 }
 
@@ -110,11 +114,11 @@ main article .card .tienda-descripcion p {
 } */
 /* login */
 
-main article.form-account {
+main article div.form-account {
   margin-top: 7em;
 }
 
-main article form {
+main article div form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -122,18 +126,18 @@ main article form {
   height: auto;
 }
 
-main article div.bienvenida {
+main article div div.bienvenida {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-main article h1 {
+main article div h1 {
   font-size: 7em;
   margin: 0.8em 0;
 }
 
-main article form input {
+main article div form input {
   background-color: #dedede;
   border: none;
   width: 100%;
@@ -142,41 +146,41 @@ main article form input {
   font-size: 2em;
 }
 
-main article form input[type="submit"] {
+main article div form input[type="submit"] {
   width: 50%;
   margin: auto;
   margin-top: 3em;
 }
 /* register */
-main article.form-account-register h1 {
+main article div.form-account-register h1 {
   text-align: center;
   font-weight: 500;
 }
-main article.form-account-register {
+main article div.form-account-register {
   margin-top: 40%;
 }
-main article form div.register-div {
+main article div form div.register-div {
   display: flex;
   flex-direction: row;
 }
 
-main article form div.register-div input {
+main article div form div.register-div input {
   width: 90%;
 }
 
-main article form p.alert-email {
+main article div form p.alert-email {
   text-align: center;
   width: 100%;
   font-size: 1.2em;
   font-weight: lighter;
   margin-top: 20px;
 }
-main article form p.alert-email:last-child {
+main article div form p.alert-email:last-child {
   margin-top: 0 !important;
 }
 /* register */
 
-main article .btn-red-account {
+main article div .btn-red-account {
   background-color: #bc6868;
   border-radius: 15px;
   height: 120px;
@@ -184,7 +188,7 @@ main article .btn-red-account {
   font-size: 3em;
 }
 
-main article div.crear-cuenta {
+main article div div.crear-cuenta {
   width: 100%;
   height: auto;
   display: flex;
@@ -193,24 +197,24 @@ main article div.crear-cuenta {
   margin-top: 4em;
 }
 
-main article div.crear-cuenta a {
+main article div div.crear-cuenta a {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
 }
 
-main article div.crear-cuenta a input {
+main article div div.crear-cuenta a input {
   border: none;
   margin-top: 0;
 }
 
-main article div.crear-cuenta p {
+main article div div.crear-cuenta p {
   font-size: 2em;
   margin-top: 5px;
 }
 
-main article form label {
+main article div form label {
   margin-top: 40px;
   font-size: 2em;
 }

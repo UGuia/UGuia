@@ -10,19 +10,10 @@ export default async function Home() {
   //obtiene todas la tiendas
   const tiendas = await TiendasQuery.TiendasAll();
 
-  let tiendaCard = {};
-
   return (
-    <div>
-      <article>
+    <>
+      <article className="container-tiendas">
         {tiendas.map((val, key) => {
-          /* tiendaCard = {
-            nombre: val.nombre,
-            horario: val?.horario,
-            descripcion: val.descripcion,
-            imagen: val.imagen,
-          }; */
-          console.log(tiendaCard);
           return (
             <div key={key}>
               <Link href={`/tiendas/${val.slug}`}>
@@ -50,6 +41,6 @@ export default async function Home() {
           );
         })}
       </article>
-    </div>
+    </>
   );
 }
