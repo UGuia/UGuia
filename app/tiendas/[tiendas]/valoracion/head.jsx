@@ -1,7 +1,7 @@
 export default function head() {
   return (
     <>
-      <title>Valoracion</title>
+      <title>Valoración</title>
     </>
   );
 }

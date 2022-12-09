@@ -4,6 +4,8 @@ import UserModel from "../../database/Models/User";
 import Joi from "joi";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { setCookie } from "cookies-next";
+import { serialize } from "cookie";
 
 const schemaLogin = Joi.object({
   email: Joi.string().min(6).max(255).required().email().messages({
@@ -65,14 +67,23 @@ export default async function login(req, res) {
       //crear token
       const token = jwt.sign(
         {
-          name: user.name,
+          email: user.email,
           id: user._id,
         },
         process.env.TOKEN_SECRET
       );
 
       //res.status(200).json({ data: "exito" });
-      res.setHeader("auth-token", token).json({
+      /* res.setHeader("auth-token", token).json({
+        error: null,
+        data: { token },
+      }); */
+
+      //res.cookie("token", token, { httpOnly: true });
+
+      res.setHeader("Set-Cookie", serialize("token", token, { path: "/" }));
+
+      res.status(200).json({
         error: null,
         data: { token },
       });

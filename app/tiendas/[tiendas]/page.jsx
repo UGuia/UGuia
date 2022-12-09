@@ -27,23 +27,25 @@ export default async function Tiendas({ params }) {
   };
 
   return (
-    <article>
-      <div className="card">
-        <Suspense fallback={<p>Cargando Imagen...</p>}>
-          <Image
-            src={proc}
-            alt=""
-            className="tienda-image"
-            width={400}
-            height={400}
-          />
+    <article className="container-tiendas">
+      <div>
+        <div className="card">
+          <Suspense fallback={<p>Cargando Imagen...</p>}>
+            <Image
+              src={proc}
+              alt=""
+              className="tienda-image"
+              width={400}
+              height={400}
+            />
+          </Suspense>
+          <Card tienda={tiendaCard} />
+        </div>
+        <Foods comidas={tienda.comidas}></Foods>
+        <Suspense fallback={<p>Cargando Localizacion...</p>}>
+          <Maps url="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d940.0608234937384!2d-96.9160773!3d19.5311657!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1669233569290!5m2!1ses-419!2smx"></Maps>
         </Suspense>
-        <Card tienda={tiendaCard} />
       </div>
-      <Foods comidas={tienda.comidas}></Foods>
-      <Suspense fallback={<p>Cargando Localizacion...</p>}>
-        <Maps url="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d940.0608234937384!2d-96.9160773!3d19.5311657!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1669233569290!5m2!1ses-419!2smx"></Maps>
-      </Suspense>
     </article>
   );
 }

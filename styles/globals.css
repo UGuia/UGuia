@@ -29,7 +29,7 @@ main article div a {
 main .container-tiendas {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 }
 
 main article div {
@@ -43,7 +43,7 @@ main article div {
   width: 98%;
 }
 
-main article div .card {
+main article div.card {
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
@@ -52,9 +52,8 @@ main article div .card {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-main article div .maps {
+main article div.maps {
   background-color: #ffffff;
-  width: 100%;
   display: flex;
   flex-direction: column;
   margin: 15px;
@@ -62,11 +61,11 @@ main article div .maps {
   margin-top: 50px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   text-align: center;
+  width: 98%;
 }
 
-main article div .comidas {
+main article div.comidas {
   background-color: #ffffff;
-  width: 100%;
   display: flex;
   flex-direction: column;
   margin: 15px;
@@ -74,38 +73,39 @@ main article div .comidas {
   margin-top: 50px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   text-align: center;
+  width: 98%;
 }
 
-main article div .maps h5 {
+main article div.maps h5 {
   padding: 15px;
 }
 
-main article div .maps iframe {
+main article div.maps iframe {
   border-radius: 15px;
   padding: 10px;
 }
 
-main article div .card:first-child {
+main article div.card:first-child {
   margin-top: 15px;
 }
 
-main article div .card .tienda-image {
+main article div.card .tienda-image {
   width: 50%;
   height: auto;
   border-radius: 15px;
 }
-main article div .card .tienda-descripcion {
+main article div.card .tienda-descripcion {
   width: 50%;
   height: 100% !important;
   padding: 0 20px;
   display: block;
 }
 
-main article div .card .tienda-descripcion h5 {
+main article div.card .tienda-descripcion h5 {
   padding-top: 5px;
 }
 
-main article div .card .tienda-descripcion p {
+main article div.card .tienda-descripcion p {
   padding-top: 5px;
 }
 
@@ -113,8 +113,12 @@ main article div .card .tienda-descripcion p {
   padding: 0;
 } */
 /* login */
-
-main article div.form-account {
+main .form-account {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+main article article.form-account {
   margin-top: 7em;
 }
 
@@ -137,35 +141,74 @@ main article div h1 {
   margin: 0.8em 0;
 }
 
-main article div form input {
+main article form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main article form input {
   background-color: #dedede;
   border: none;
-  width: 100%;
+  width: 70%;
   height: 70px;
   margin-top: 20px;
   font-size: 2em;
 }
 
-main article div form input[type="submit"] {
+main article form label {
+  float: left;
+  width: 70%;
+  margin-top: 20px;
+}
+
+/* button */
+main article .btn-red-account {
+  background-color: #bc6868;
+  border-radius: 15px;
+  height: 120px;
+  margin-top: 3em;
+  font-size: 3em;
+}
+
+main article form input[type="submit"] {
   width: 50%;
   margin: auto;
   margin-top: 3em;
 }
 /* register */
-main article div.form-account-register h1 {
+
+main .form-account-register {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+main article.form-account-register h1 {
   text-align: center;
   font-weight: 500;
 }
-main article div.form-account-register {
+main article.form-account-register {
   margin-top: 40%;
 }
-main article div form div.register-div {
+main div form div.register-div {
   display: flex;
   flex-direction: row;
+  width: 83%;
+}
+
+main div form div.register-div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0px;
+  grid-gap: 4em;
 }
 
 main article div form div.register-div input {
-  width: 90%;
+  width: 100%;
 }
 
 main article div form p.alert-email {
@@ -178,17 +221,10 @@ main article div form p.alert-email {
 main article div form p.alert-email:last-child {
   margin-top: 0 !important;
 }
+
 /* register */
 
-main article div .btn-red-account {
-  background-color: #bc6868;
-  border-radius: 15px;
-  height: 120px;
-  margin-top: 3em;
-  font-size: 3em;
-}
-
-main article div div.crear-cuenta {
+main article div.crear-cuenta {
   width: 100%;
   height: auto;
   display: flex;
@@ -197,19 +233,19 @@ main article div div.crear-cuenta {
   margin-top: 4em;
 }
 
-main article div div.crear-cuenta a {
+main article div.crear-cuenta a {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
 }
 
-main article div div.crear-cuenta a input {
+main article div.crear-cuenta a input {
   border: none;
   margin-top: 0;
 }
 
-main article div div.crear-cuenta p {
+main article div.crear-cuenta p {
   font-size: 2em;
   margin-top: 5px;
 }
@@ -244,6 +280,45 @@ p.clasificacion input:checked ~ label {
   color: #ffa400;
 }
 /* estrellas */
+
+/* valoracion */
+main .valoracion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .valoracion img {
+  margin-top: 4em;
+}
+
+main .valoracion h1 {
+  margin-top: 0.8em;
+  font-size: 5em;
+  text-align: center;
+}
+
+main .valoracion div {
+  width: auto;
+  margin: 2em 0;
+}
+
+main .valoracion p.clasificacion {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+main .valoracion p.clasificacion label {
+  font-size: 3em;
+  /*  display: contents; */
+}
+
+main .valoracion form {
+  width: 100%;
+}
+main .valoracion form label {
+  font-size: 2em;
+}
 
 @media (prefers-color-scheme: dark) {
   html {

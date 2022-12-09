@@ -1,12 +1,41 @@
 import mongoose from "mongoose";
 import UserModel from "../../database/Models/User";
-
+import bcrypt from "bcrypt";
 import Joi from "joi";
 
 const schemaRegister = Joi.object({
-  nombre: Joi.string().min(6).max(255).required(),
-  email: Joi.string().min(6).max(255).required().email(),
-  password: Joi.string().min(6).max(1024).required(),
+  nombre: Joi.string().min(4).max(255).required().messages({
+    "string.min": `El nombre debe contener al menos 4 letras.`,
+    "any.required": `El nombre es requerido.`,
+    "string.max": "El nombre es demasiado largo.",
+  }),
+  apellidos: Joi.string().min(6).max(255).required().messages({
+    "string.min": `Los apellidos debe contener al menos 6 letras.`,
+    "string.max": "Los apellidos es demasiado largo.",
+    "any.required": `Los apellidos son requeridos.`,
+  }),
+  email: Joi.string().min(6).max(255).required().email().messages({
+    "string.min": `El email debe contener al menos 6 letras.`,
+    "string.max": "El email es demasiado largo.",
+    "any.required": `El email es requerido.`,
+    "string.email": "El email no tiene formato valido.",
+  }),
+  password: Joi.string().min(6).max(1024).required().messages({
+    "string.min": `El password debe contener al menos 6 letras.`,
+    "string.max": "El password es demasiado largo.",
+    "any.required": `El password es requerido.`,
+  }),
+  telefono: Joi.number()
+    .allow("")
+    .optional()
+    .min(6)
+    .max(1024)
+    .required()
+    .messages({
+      "number.min": `El telefono debe contener al menos 6 numeros.`,
+      "number.max": "El telefono es demasiado largo.",
+      "any.required": `El telefono es requerido.`,
+    }),
 });
 
 export default async function login(req, res) {
@@ -21,7 +50,7 @@ export default async function login(req, res) {
         return res.status(400).json({ error: error.details[0].message });
       }
 
-      const { nombre, email } = req.body;
+      const { nombre, apellidos, email } = req.body;
 
       //validar email
       const isEmailExist = await UserModel.findOne({ email });
@@ -37,12 +66,15 @@ export default async function login(req, res) {
       //guardar usuario
       UserModel.create({
         _id: new mongoose.Types.ObjectId(),
-        Nombre: nombre,
+        Nombre: nombre + "|" + apellidos,
         email: email,
         Password: password,
       });
 
-      res.status(200).json({ name: "John Doe" });
+      res.status(200).json({
+        error: null,
+        data: { message: "Se creo el usuario correctamente" },
+      });
       return;
 
     default:

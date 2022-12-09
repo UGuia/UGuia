@@ -8,10 +8,12 @@ const Comments = new Schema(
     User: { type: Schema.ObjectId, ref: "User", autopopulate: true },
     comentario: String,
     fecha: Date,
+    valoracion: String,
   },
   { versionKey: false }
 );
 
-const CommentsModel = mongoose.model("Comments", Comments);
+const CommentsModel =
+  mongoose.models.Comments || mongoose.model("Comments", Comments);
 
 export default CommentsModel;

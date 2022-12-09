@@ -11,6 +11,7 @@
   "dependencies": {
     "babel-loader": "^9.1.0",
     "bcrypt": "^5.1.0",
+    "cookies-next": "^2.1.1",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.5",
     "joi": "^17.7.0",
