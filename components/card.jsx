@@ -2,12 +2,14 @@
 import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import Estrellas from "./estrellas";
-export default function Card({ tienda }) {
+export default function Card({ tienda, url }) {
   const [tiendas, setTiendas] = useState(null);
+  const [link, setLink] = useState(null);
 
   useEffect(() => {
     setTiendas(tienda);
-  }, [tienda]);
+    setLink(url);
+  }, [tienda, url]);
 
   //import proc from `../public/${image}`;
   // let user = localizacionUser;
@@ -21,6 +23,12 @@ export default function Card({ tienda }) {
 
         <Suspense fallback={<p>Cargando valoracion...</p>}>
           {/* <Link href="/tiendas/valorar-tienda"></Link> */}
+          {/* <Link href={"/tiendas/" + url + "/valoracion"}>
+          </Link> */}
+          {/* <div>
+            <a href={"/tiendas/" + url + "/valoracion"}>
+            </a>
+          </div> */}
           <Estrellas></Estrellas>
         </Suspense>
         <p>{tiendas?.horario}</p>

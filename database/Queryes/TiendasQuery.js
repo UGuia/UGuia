@@ -19,7 +19,7 @@ const TiendasQuery = {
     return tienda;
   }),
   TiendasBySlugCacheAndComments: cache(async (slug) => {
-    const tienda = await TiendasModel.find({ slug })
+    const tienda = await TiendasModel.findOne({ slug })
       .populate({
         path: "Comments",
         /**

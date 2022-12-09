@@ -32,8 +32,8 @@ async function getPost(slug) {
   //     longitud: 8.1,
   //   },
   // });
-  const tienda = await TiendasQuery.TiendasBySlugCache(slug);
-  console.log(tienda);
+  const tienda = await TiendasQuery.TiendasBySlugCacheAndComments(slug);
+  //console.log(tienda);
 
   return tienda.nombre;
   //console.log(tiendas);

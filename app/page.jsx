@@ -34,6 +34,7 @@ export default async function Home() {
                       descripcion: val.descripcion,
                       imagen: val.imagen,
                     }}
+                    url={val.slug}
                   />
                 </div>
               </Link>

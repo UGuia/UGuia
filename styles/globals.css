@@ -74,6 +74,19 @@ main article div.comidas {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   text-align: center;
   width: 98%;
+  padding: 15px;
+}
+
+main article div.comidas article,
+main article div.comidas h5 {
+  width: 100%;
+}
+main article div.comidas h5 {
+  font-size: 1.2em;
+}
+
+main article div.comidas article ul {
+  list-style: none;
 }
 
 main article div.maps h5 {
@@ -103,10 +116,34 @@ main article div.card .tienda-descripcion {
 
 main article div.card .tienda-descripcion h5 {
   padding-top: 5px;
+  font-size: 2em;
 }
 
 main article div.card .tienda-descripcion p {
   padding-top: 5px;
+}
+
+/* comentarios */
+main article div.comentario {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  border-radius: 15px;
+  margin-top: 50px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  text-align: center;
+  width: 98%;
+  padding: 10px;
+}
+
+main article div.comentario ul {
+  list-style: none;
+  width: 100%;
+}
+
+main article div.comentario h5 {
+  font-size: 1.2em;
 }
 
 /* main .card .tienda-descripcion p:last-child {
