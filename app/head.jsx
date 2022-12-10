@@ -53,37 +53,84 @@ export default async function Head() {
   console.log(tienda);
   console.log(JSON.stringify(tienda)); */
 
-  const tienda = await TiendasQuery.TiendasBySlugCacheAndComments("tienda-2");
-  console.log(tienda);
+  // const tienda = await TiendasQuery.TiendasBySlugCacheAndComments("tienda-2");
+  // console.log(tienda);
 
   //console.log(TiendasQuery.TiendasBySlugCacheAndComments("tienda-2"));
   /* const tienda = await CommentsModel.find().populate("User");
   console.log(tienda);
   console.log(JSON.stringify(tienda)); */
 
-  /* let tiendas = await TiendasModel.create({
-    _id: new mongoose.Types.ObjectId(),
-    nombre: "tienda 2",
-    slug: "tienda-2",
-    horario: "8am - 6pm",
-    imagen: "243341.png",
-    comidas: [
-      {
-        nombre: "pizza",
-        precio: 20,
-      },
-      {
-        nombre: "perro caliente",
-        precio: 15,
-      },
-    ],
-    descripcion: "ejemplo de una descripcion breve",
-    localizacion: {
-      altitud: 19.8,
-      longitud: 8.1,
-    },
-  });
-  console.log(tiendas); */
+  // let tiendas = await TiendasModel.create({
+  //   _id: new mongoose.Types.ObjectId(),
+  //   nombre: "Oxxo arco sur",
+  //   slug: "Oxxo-arco-sur",
+  //   horario: "abierto las 24 horas del día",
+  //   imagen: "oxxo.jpg",
+  //   comidas: [
+  //     {
+  //       nombre: "pizza",
+  //       precio: 20,
+  //     },
+  //     {
+  //       nombre: "perro caliente",
+  //       precio: 15,
+  //     },
+  //   ],
+  //   descripcion: "Compras en tienda, estacionamiento",
+  //   localizacion: {
+  //     altitud: 19.8,
+  //     longitud: 8.1,
+  //   },
+  // });
+
+  // await TiendasModel.create({
+  //   _id: new mongoose.Types.ObjectId(),
+  //   nombre: "Antojitos doña leo",
+  //   slug: "antojitos-dona-leo",
+  //   horario: "abierto de 8:00 am - 6:30 pm",
+  //   imagen: "antojitos-leo.jpg",
+  //   comidas: [
+  //     {
+  //       nombre: "picadas",
+  //       precio: 15,
+  //     },
+  //     {
+  //       nombre: "empanadas",
+  //       precio: 10,
+  //     },
+  //   ],
+  //   descripcion:
+  //     "Establecimiento donde venden antojitos mexicanos tales como: empanadas, picadas, flautas",
+  //   localizacion: {
+  //     altitud: 19.8,
+  //     longitud: 8.1,
+  //   },
+  // });
+
+  // await TiendasModel.create({
+  //   _id: new mongoose.Types.ObjectId(),
+  //   nombre: "Little Caesar's",
+  //   slug: "little-caesars",
+  //   horario: "10:00 am - 10:00 pm",
+  //   imagen: "little-caesar.jpg",
+  //   comidas: [
+  //     {
+  //       nombre: "pizza peperoni",
+  //       precio: 99,
+  //     },
+  //     {
+  //       nombre: "pizza queso",
+  //       precio: 120,
+  //     },
+  //   ],
+  //   descripcion: "Establecimiento de comida rápida principalmente de pizza",
+  //   localizacion: {
+  //     altitud: 19.8,
+  //     longitud: 8.1,
+  //   },
+  // });
+  //console.log(tiendas);
   return (
     <>
       <title>Tiendas</title>

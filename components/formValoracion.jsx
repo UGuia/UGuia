@@ -17,7 +17,7 @@ async function consumirApi(data, url) {
   return api.json();
 }
 
-export default function FormValoracion() {
+export default function FormValoracion({title}) {
   const [estrella, setEstrella] = useState(null);
 
   function GuardarOpinion(e) {
@@ -48,7 +48,7 @@ export default function FormValoracion() {
 
   return (
     <>
-      <h1>¿Qué te pareció el servicio de Pizzatopia?</h1>
+      <h1>¿Qué te pareció el servicio de {title}?</h1>
       <form onChange={estrellasChange}>
         <Estrellas></Estrellas>
       </form>

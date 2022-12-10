@@ -4,7 +4,6 @@ import UserModel from "../../database/Models/User";
 import Joi from "joi";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { setCookie } from "cookies-next";
 import { serialize } from "cookie";
 
 const schemaLogin = Joi.object({

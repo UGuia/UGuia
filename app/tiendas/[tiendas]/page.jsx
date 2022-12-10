@@ -10,12 +10,31 @@ import proc from "../../../public/243341.png";
 import Commentarios from "../../../components/Commentarios";
 //import proc from "https://www.google.com.mx/maps/place/Jos%C3%A9+Ma.+Arteaga,+Zona+Centro,+Centro,+91000+Xalapa-Enr%C3%ADquez,+Ver./@19.5311657,-96.9160773,19z/data=!4m5!3m4!1s0x85db320202bd0f25:0x89b249b0eb16ce97!8m2!3d19.5311986!4d-96.9155784";
 
+// const DynamicHeader = dynamic(
+//   ({ imagen }) => import("../../../public/" + imagen),
+//   {
+//     suspense: true,
+//   }
+// );
+
 export default async function Tiendas({ params }) {
   //buscar por slug en la base de datos
-  const tienda = await TiendasQuery.TiendasBySlugCacheAndComments(
-    params.tiendas
-  );
 
+  const tienda = await TiendasQuery.TiendasBySlugCache(params.tiendas);
+
+  // const ImagenDinamic = dynamic(() =>
+  //   import("../../../public" + tienda.imagen).then((res) => {
+  //     return (
+  //       <Image
+  //         src={res}
+  //         alt=""
+  //         className="tienda-image"
+  //         width={400}
+  //         height={400}
+  //       />
+  //     );
+  //   })
+  // );
   // const tien = await TiendasQuery.TiendasBySlugCacheAndComments(params.tiendas);
 
   console.log(tienda.Comments);
@@ -43,16 +62,22 @@ export default async function Tiendas({ params }) {
     <article className="container-tiendas">
       <div>
         <div className="card">
+          {/* <DynamicHeader imagen={imagen} /> */}
+          {/* <ImagenDinamic></ImagenDinamic> */}
           <Suspense fallback={<p>Cargando Imagen...</p>}>
             <Image
-              src={proc}
+              src={"/" + tienda.imagen}
               alt=""
               className="tienda-image"
               width={400}
               height={400}
             />
           </Suspense>
-          <Card tienda={tiendaCard} url={params.tiendas} />
+          <Card
+            tienda={tiendaCard}
+            url={params.tiendas}
+            tiendasEstrella={false}
+          />
         </div>
         <Foods comidas={tienda.comidas}></Foods>
         <Suspense fallback={<p>Cargando Localizacion...</p>}>

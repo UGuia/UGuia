@@ -20,7 +20,7 @@ export default async function Home() {
                 <div className="card">
                   <Suspense fallback={<p>Cargando Imagen...</p>}>
                     <Image
-                      src={proc}
+                      src={"/" + val.imagen}
                       alt=""
                       className="tienda-image"
                       width={400}
@@ -35,6 +35,7 @@ export default async function Home() {
                       imagen: val.imagen,
                     }}
                     url={val.slug}
+                    tiendasEstrella={true}
                   />
                 </div>
               </Link>
